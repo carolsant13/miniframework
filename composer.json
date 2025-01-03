@@ -1,0 +1,18 @@
+{
+    "name": "carolina/miniframework",
+    "require": {
+        "php": ">= 8.0"
+    },
+    "authors": [
+        {
+            "name": "Carolina Barbosa",
+            "email": "carolinamsanto@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "app\\": "app/",
+            "MF\\": "vendor/MF/"
+        }
+    }
+}
