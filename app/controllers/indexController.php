@@ -1,34 +1,21 @@
 <?php
     namespace app\controllers;
 
-    class indexController{
+    use MF\controller\action;
 
-        private $view;
-        public function __construct()
-        {
-            $this->view = new \stdClass();
-        }
+    class indexController extends action{
 
         public function index(){
 
             $this->view-> dados= array('sofa', 'cadeira', 'cama');
-            $this->render('index');
+            $this->render('index' ,'layout1');
         }
 
         public function sobreNos(){
 
             $this->view-> dados= array('notebook', 'smartphone');
-            $this->render('sobreNos');
+            $this->render('sobreNos', 'layout2');
         }
 
-        public function render($view){
-            $classAtual =get_class($this);
-
-            $classAtual =str_replace('app\\controllers\\', '', $classAtual);
-
-            $classAtual =strtolower( str_replace('Controller', '', $classAtual));
-
-            require_once '../app/views/'.$classAtual.'/'.$view.'.php';
-    }
     }
 ?>
