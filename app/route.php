@@ -2,23 +2,23 @@
 
     namespace app;
 
-    class Route {
+    use MF\init\Bootstrap;
 
-        public function initRoutes(){
+    class Route extends Bootstrap{
+
+        protected function initRoutes(){
             $routes['home'] = array(
                 'route'=> '/',
                 'controller' => 'indexController',
                 'action' => 'index'
             );
             $routes['sobre_nos'] = array(
-                'route'=> '/',
+                'route'=> '/sobre_nos',
                 'controller' => 'indexController',
                 'action' => 'sobreNos'
             );
-        }
 
-        public function getUrl(){
-            return parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+            $this->setRoutes($routes);
         }
     }
 ?>
