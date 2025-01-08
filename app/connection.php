@@ -12,7 +12,7 @@
 
                 return$conn;
 
-            }catch(\PODOException $e){
+            }catch(\PDOException $e){
 
             }
         }
